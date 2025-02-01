@@ -1,0 +1,140 @@
+﻿<UserControl x:Class="MusicApp.Views.HomeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MusicApp.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="1000" d:DesignWidth="800">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="..\Resources\TabsResources.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid Style="{StaticResource SelectedGridStyle}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <!--<ColumnDefinition Width="225"/>-->
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0" Style="{StaticResource SelectedGridStyle}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.75*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="4*"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" Text="Good Evening" FontSize="30"/>
+
+            <UniformGrid Grid.Row="1" Rows="3" Columns="2" Margin="0,-10,0,-10">
+                <Border>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="80"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Column="0" Source="ViewResources\AlbumCovers\album1.jpg"/>
+                        <TextBlock Grid.Column="1" Text="Queen"/>
+                    </Grid>
+                </Border>
+                <Border>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="80"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Column="0" Source="ViewResources\AlbumCovers\album2.jpg"/>
+                        <TextBlock Grid.Column="1" Text="Cardi B"/>
+                    </Grid>
+                </Border>
+                <Border>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="80"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Column="0" Source="ViewResources\AlbumCovers\album3.jpg"/>
+                        <TextBlock Grid.Column="1" Text="Lady Gaga"/>
+                    </Grid>
+                </Border>
+                <Border>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="80"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Column="0" Source="ViewResources\AlbumCovers\album4.jpg"/>
+                        <TextBlock Grid.Column="1" Text="Dua Lipa"/>
+                    </Grid>
+                </Border>
+                <Border>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="80"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Column="0" Source="ViewResources\AlbumCovers\album5.jpg"/>
+                        <TextBlock Grid.Column="1" Text="Taylor Swift"/>
+                    </Grid>
+                </Border>
+                <Border>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="80"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Column="0" Source="ViewResources\AlbumCovers\album6.jpg"/>
+                        <TextBlock Grid.Column="1" Text="Dawid Podsiało"/>
+                    </Grid>
+                </Border>
+            </UniformGrid>
+
+            <TextBlock Grid.Row="2" Text="Your dashboard" FontSize="25"/>
+
+            <UniformGrid Grid.Row="3" Rows="3" Columns="4">
+                <Border Width="150" Height="150">
+                    <Image Grid.Column="0" Source="ViewResources\Icons\liked.jpg"/>
+                </Border>
+                <Border Width="150" Height="150">
+                    <Image Grid.Column="0" Source="ViewResources\AlbumCovers\onrep.jpg"/>
+                </Border>
+                <Border Width="150" Height="150">
+                    <Image Grid.Column="0" Source="ViewResources\AlbumCovers\reprew.jpg"/>
+                </Border>
+                <Border Width="150" Height="150">
+                    <Image Grid.Column="0" Source="ViewResources\AlbumCovers\timecap.jpg"/>
+                </Border>
+                <Border Width="150" Height="150">
+                    <Image Grid.Column="0" Source="ViewResources\AlbumCovers\play1.jpg"/>
+                </Border>
+                <Border Width="150" Height="150">
+                    <Image Grid.Column="0" Source="ViewResources\AlbumCovers\play2.jpg"/>
+                </Border>
+                <Border Width="150" Height="150">
+                    <Image Grid.Column="0" Source="ViewResources\AlbumCovers\play3.jpg"/>
+                </Border>
+                <Border Width="150" Height="150">
+                    <Image Grid.Column="0" Source="ViewResources\AlbumCovers\play4.jpg"/>
+                </Border>
+                <Border Width="150" Height="150">
+                    <Image Grid.Column="0" Source="ViewResources\AlbumCovers\play5.jpg"/>
+                </Border>
+                <Border Width="150" Height="150">
+                    <Image Grid.Column="0" Source="ViewResources\AlbumCovers\play6.jpg"/>
+                </Border>
+                <Border Width="150" Height="150">
+                    <Image Grid.Column="0" Source="ViewResources\AlbumCovers\play7.jpg"/>
+                </Border>
+                <Border Width="150" Height="150">
+                    <Image Grid.Column="0" Source="ViewResources\AlbumCovers\play8.jpg"/>
+                </Border>
+            </UniformGrid>
+        </Grid>
+
+    </Grid>
+</UserControl>

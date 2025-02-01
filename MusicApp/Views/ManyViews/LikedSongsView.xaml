@@ -1,0 +1,73 @@
+﻿<local:BaseManyView x:Class="MusicApp.Views.ManyViews.LikedSongsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MusicApp.Views.ManyViews"
+             xmlns:Many="clr-namespace:MusicApp.ViewModels.ManyViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="1100" d:DesignWidth="800">
+
+    <local:BaseManyView.DataContext>
+        <Many:LikedSongsViewModel/>
+    </local:BaseManyView.DataContext>
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="..\..\Resources\TabsResources.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="800"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Image Grid.Column="0" Height="150" VerticalAlignment="Bottom" Source="..\ViewResources\Icons\liked.jpg" Margin="0,10,10,10"/>
+            <TextBlock Grid.Column="1" Text="Liked Songs" FontSize="80" VerticalAlignment="Bottom"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <Image Grid.Column="0" x:Name="PlayImage" Source="..\ViewResources\Icons\play.png" Margin="2" MouseDown="PlayImage_MouseDown"/>
+            <Image Grid.Column="1" Source="..\ViewResources\Icons\download.png" Height="30" Margin="2"/>
+            <TextBlock Grid.Column="3" Text="Duration: "/>
+            <TextBlock Grid.Column="4" Text="{Binding TotalLength, Converter={StaticResource SecondsToTimeConverter}}"/>
+            <Button Grid.Column="5" Content="Calculate" Height="40" Command="{Binding CalculateLengthCommand}"/>
+        </Grid>
+        <StackPanel Grid.Row="3" >
+            <DataGrid CanUserAddRows="False" AutoGenerateColumns="False" ItemsSource="{Binding Models}" SelectedItem="{Binding SelectedItem}">
+
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Id" Binding="{Binding LikedSongId}"/>
+
+                    <DataGridTextColumn Header="Title" Binding="{Binding Song.SongName}"/>
+
+                    <DataGridTextColumn Header="Artist" Binding="{Binding Song.Artist.ArtistName}"/>
+
+                    <DataGridTextColumn Header="Album" Binding="{Binding Song.Album.AlbumName}"/>
+
+                    <DataGridTextColumn Header="Duration" Binding="{Binding Song.SongDuration, Converter={StaticResource SecondsToTimeConverter}}"/>
+                    
+                    <DataGridTextColumn Header="Liked date" Binding="{Binding LikedDate, Converter={StaticResource DateTimeInWordsDateConverter}}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+
+    </Grid>
+</local:BaseManyView>

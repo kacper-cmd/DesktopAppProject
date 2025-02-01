@@ -1,0 +1,194 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Views\ViewResources\AlbumCovers\album1.jpg" />
+    <None Remove="Views\ViewResources\AlbumCovers\album2.jpg" />
+    <None Remove="Views\ViewResources\AlbumCovers\album3.jpg" />
+    <None Remove="Views\ViewResources\AlbumCovers\album4.jpg" />
+    <None Remove="Views\ViewResources\AlbumCovers\album5.jpg" />
+    <None Remove="Views\ViewResources\AlbumCovers\album6.jpg" />
+    <None Remove="Views\ViewResources\AlbumCovers\onrep.jpg" />
+    <None Remove="Views\ViewResources\AlbumCovers\Pitbull_Globalization.png" />
+    <None Remove="Views\ViewResources\AlbumCovers\play1.jpg" />
+    <None Remove="Views\ViewResources\AlbumCovers\play2.jpg" />
+    <None Remove="Views\ViewResources\AlbumCovers\play3.jpg" />
+    <None Remove="Views\ViewResources\AlbumCovers\play4.jpg" />
+    <None Remove="Views\ViewResources\AlbumCovers\play5.jpg" />
+    <None Remove="Views\ViewResources\AlbumCovers\play6.jpg" />
+    <None Remove="Views\ViewResources\AlbumCovers\play7.jpg" />
+    <None Remove="Views\ViewResources\AlbumCovers\play8.jpg" />
+    <None Remove="Views\ViewResources\AlbumCovers\reprew.jpg" />
+    <None Remove="Views\ViewResources\AlbumCovers\timecap.jpg" />
+    <None Remove="Views\ViewResources\Icons\artist.png" />
+    <None Remove="Views\ViewResources\Icons\cd.png" />
+    <None Remove="Views\ViewResources\Icons\download.png" />
+    <None Remove="Views\ViewResources\Icons\heart.png" />
+    <None Remove="Views\ViewResources\Icons\heartfill.png" />
+    <None Remove="Views\ViewResources\Icons\home.png" />
+    <None Remove="Views\ViewResources\Icons\libr.png" />
+    <None Remove="Views\ViewResources\Icons\liked.jpg" />
+    <None Remove="Views\ViewResources\Icons\mic.png" />
+    <None Remove="Views\ViewResources\Icons\next.png" />
+    <None Remove="Views\ViewResources\Icons\note.png" />
+    <None Remove="Views\ViewResources\Icons\pause.png" />
+    <None Remove="Views\ViewResources\Icons\play.png" />
+    <None Remove="Views\ViewResources\Icons\prev.png" />
+    <None Remove="Views\ViewResources\Icons\search.png" />
+    <None Remove="Views\ViewResources\Icons\vol.png" />
+    <None Remove="Views\ViewResources\PodcastsCover\nightVale.jpg" />
+    <None Remove="Views\ViewResources\PodcastsCover\snt.jpg" />
+    <None Remove="Views\ViewResources\PodcastsCover\superbloom.jpeg" />
+    <None Remove="Views\ViewResources\PodcastsCover\tma.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Views\ViewResources\AlbumCovers\album1.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\ViewResources\AlbumCovers\album2.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\ViewResources\AlbumCovers\album3.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\ViewResources\AlbumCovers\album4.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\ViewResources\AlbumCovers\album5.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\ViewResources\AlbumCovers\album6.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\ViewResources\AlbumCovers\onrep.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\ViewResources\AlbumCovers\Pitbull_Globalization.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\ViewResources\AlbumCovers\play1.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\ViewResources\AlbumCovers\play2.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\ViewResources\AlbumCovers\play3.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\ViewResources\AlbumCovers\play4.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\ViewResources\AlbumCovers\play5.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\ViewResources\AlbumCovers\play6.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\ViewResources\AlbumCovers\play7.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\ViewResources\AlbumCovers\play8.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\ViewResources\AlbumCovers\reprew.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\ViewResources\AlbumCovers\timecap.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\ViewResources\Icons\artist.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\ViewResources\Icons\cd.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\ViewResources\Icons\download.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\ViewResources\Icons\heart.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\ViewResources\Icons\heartfill.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\ViewResources\Icons\home.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\ViewResources\Icons\libr.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\ViewResources\Icons\liked.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\ViewResources\Icons\mic.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\ViewResources\Icons\next.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\ViewResources\Icons\note.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\ViewResources\Icons\pause.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\ViewResources\Icons\play.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\ViewResources\Icons\prev.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\ViewResources\Icons\search.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\ViewResources\Icons\vol.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\ViewResources\PodcastsCover\nightVale.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\ViewResources\PodcastsCover\snt.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\ViewResources\PodcastsCover\superbloom.jpeg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\ViewResources\PodcastsCover\tma.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\ViewResources\GlobalResources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>GlobalResources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Views\ViewResources\GlobalResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>GlobalResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,42 @@
+﻿<local:BaseSingleView x:Class="MusicApp.Views.SingleViews.PlaylistSongView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MusicApp.Views.SingleViews" xmlns:Single="clr-namespace:MusicApp.ViewModels.SingleViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="200" d:DesignWidth="400">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../../Resources/TabsResources.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <local:BaseSingleView.DataContext>
+        <Single:PlaylistSongViewModel/>
+    </local:BaseSingleView.DataContext>
+
+    <Border Style="{StaticResource SelectedBorderStyle}">
+        <Grid Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition  Width="150"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            
+            <TextBlock  Grid.Column="0"  Grid.Row="0"  Text="Choose Song" Margin="2,10"/>
+            <ComboBox  Grid.Column="1"  Grid.Row="0" Margin="2,10" ItemsSource="{Binding Songs}" DisplayMemberPath="Title" SelectedValuePath="Id" SelectedValue="{Binding SongID, ValidatesOnDataErrors=True, UpdateSourceTrigger=LostFocus}"/>
+
+            <TextBlock  Grid.Column="0"  Grid.Row="1"  Text="Choose Playlist" Margin="2,10"/>
+            <ComboBox  Grid.Column="1"  Grid.Row="1" Margin="2,10" ItemsSource="{Binding Playlists}" DisplayMemberPath="Title" SelectedValuePath="Id" SelectedValue="{Binding PlaylistID, ValidatesOnDataErrors=True, UpdateSourceTrigger=LostFocus}"/>
+
+        </Grid>
+    </Border>
+</local:BaseSingleView>

@@ -1,0 +1,59 @@
+﻿<local:BaseSingleView 
+             x:Class="MusicApp.Views.SingleViews.SongView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MusicApp.Views.SingleViews"
+             xmlns:Single="clr-namespace:MusicApp.ViewModels.SingleViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="190" d:DesignWidth="800">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../../Resources/TabsResources.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <local:BaseSingleView.DataContext>
+        <Single:SongViewModel/>
+    </local:BaseSingleView.DataContext>
+
+    <Border Style="{StaticResource SelectedBorderStyle}">
+        <Grid Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition  Width="150"/>
+                <ColumnDefinition/>
+                <ColumnDefinition  Width="150"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock  Grid.Column="0"  Grid.Row="0"  Text="Song title" Margin="2"/>
+            <TextBox  Grid.Column="1"  Grid.Row="0" Margin="2" Text="{Binding SongName, ValidatesOnDataErrors=True, UpdateSourceTrigger=LostFocus}"/>
+
+            <TextBlock  Grid.Column="2"  Grid.Row="0"  Text="Artist" Margin="2"/>
+            <ComboBox  Grid.Column="3"  Grid.Row="0" Margin="2" ItemsSource="{Binding Artists}" DisplayMemberPath="Title" SelectedValuePath="Id" SelectedValue="{Binding ArtistID, ValidatesOnDataErrors=True, UpdateSourceTrigger=LostFocus}"/>
+
+            <TextBlock  Grid.Column="0"  Grid.Row="1"  Text="Duration (sec)" Margin="2"/>
+            <TextBox  Grid.Column="1"  Grid.Row="1" Margin="2" Text="{Binding SongDuration, ValidatesOnDataErrors=True, UpdateSourceTrigger=LostFocus}"/>
+
+            <TextBlock  Grid.Column="2"  Grid.Row="1"  Text="Album" Margin="2"/>
+            <ComboBox  Grid.Column="3"  Grid.Row="1" Margin="2" ItemsSource="{Binding Albums}" DisplayMemberPath="Title" SelectedValuePath="Id" SelectedValue="{Binding AlbumID, ValidatesOnDataErrors=True, UpdateSourceTrigger=LostFocus}"/>
+
+            <TextBlock  Grid.Column="0"  Grid.Row="2"  Text="Release Date" Margin="2"/>
+            <DatePicker Grid.Column="1" Grid.Row="2" SelectedDate="{Binding ReleaseDate}"/>
+
+            <TextBlock  Grid.Column="2"  Grid.Row="2"  Text="Genre" Margin="2"/>
+            <ComboBox Grid.Column="3"  Grid.Row="2" Margin="2" ItemsSource="{Binding Genres}" DisplayMemberPath="Title" SelectedValuePath="Id" SelectedValue="{Binding GenreID, ValidatesOnDataErrors=True, UpdateSourceTrigger=LostFocus}"/>
+
+        </Grid>
+    </Border>
+</local:BaseSingleView>

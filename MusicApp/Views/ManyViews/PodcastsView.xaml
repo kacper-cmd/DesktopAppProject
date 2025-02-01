@@ -1,0 +1,48 @@
+﻿<local:BaseManyView x:Class="MusicApp.Views.ManyViews.PodcastsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MusicApp.Views.ManyViews" xmlns:Many="clr-namespace:MusicApp.ViewModels.ManyViewModels"
+                    mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="800">
+
+    <local:BaseManyView.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="..\..\Resources\TabsResources.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </local:BaseManyView.Resources>
+
+    <UserControl.DataContext>
+        <Many:PodcastsViewModel/>
+    </UserControl.DataContext>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <UniformGrid Grid.Row="0" Columns="2">
+            <TextBlock Text="Continue listening..."/>
+        </UniformGrid>
+        
+        <ItemsControl Grid.Row="1" ItemsSource="{Binding Models}" HorizontalAlignment="Left">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid Columns="4"></UniformGrid>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Style="{StaticResource SelectedStackPanelStyle}">
+                        <Image Source="{Binding Podcast.PodcastDescription}" Width="200" Margin="-10,-10,0,0"/>
+                        <TextBlock Text="{Binding Podcast.PodcastName}" FontSize="15" FontWeight="Bold" Margin="10" Foreground="White" TextWrapping="Wrap" />
+                        <Button Content="See details" Command="{Binding OpenEpisodeListCommand}" Width="80" Height="30" Margin="5"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+    </Grid>
+</local:BaseManyView>
